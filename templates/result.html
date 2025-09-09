@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>AI 성격 프로파일</h1>
+
+  <div class="card">
+    <h3>AI 요약</h3>
+    <p>{{ result.description }}</p>
+  </div>
+
+  <div class="card">
+    <h3>AI 감정/확률</h3>
+    {% if result.ai_top %}
+      <ul>
+        {% for i in range(result.ai_top|length) %}
+          <li>{{ result.ai_top[i] }}: <strong>{{ '%.0f' % (result.ai_scores[i]*100) }}%</strong></li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="hint">AI 감정 모델 결과가 없으면 DSP 특성만 표시됩니다.</p>
+    {% endif %}
+  </div>
+
+  <div class="card">
+    <h3>결과 카드 이미지</h3>
+    <img src="{{ image_path }}" alt="Result Card" style="max-width:100%;">
+  </div>
+
+  <p class="hint">※ 본 결과는 AI가 제공한 음성 분석을 바탕으로 생성된 <strong>성격 프로파일</strong>입니다.</p>
+{% endblock %}

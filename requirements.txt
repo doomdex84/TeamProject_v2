@@ -1,0 +1,31 @@
+# --- FastAPI & 웹 ---
+fastapi
+uvicorn[standard]
+jinja2
+python-multipart
+
+# --- 오디오 처리 ---
+librosa
+numpy
+soundfile
+pillow
+
+# --- AI 모델 (옵션) ---
+torch
+torchaudio
+transformers
+accelerate
+
+# --- 운영 & LLM ---
+openai
+python-dotenv
+
+# --- 품질 보강 ---
+# webrtcvad
+# rnnoise
+opensmile
+faster-whisper
+onnxruntime
+
+# --- Streamlit 확장 (옵션 B에서만) ---
+streamlit-webrtc
